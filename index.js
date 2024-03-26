@@ -30,17 +30,17 @@ app.get('/api/whoami', (req, res) => {
   const acceptsLanguages = req.headers["accept-language"]
   const userAgent = req.headers["user-agent"]
 
-  res.status(200).send({
-    "ipaddress": ip, "language": acceptsLanguages,
+  const obj = {
+    "ipaddress": ip,
+    "language": acceptsLanguages,
     "software": userAgent
-  })
-  // console.log(req.headers["accept-language"])
+  }
+
+  res.status(200).send(obj)
+  // console.log(ip)
 })
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT || 3000, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
-// git remote set-url origin https://github.com/ASIM-OSAMA/Request-Header-Parser-Microservice.git
-// git branch -M main
-// git push -u origin main
