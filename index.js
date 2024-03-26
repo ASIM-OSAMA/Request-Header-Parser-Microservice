@@ -41,3 +41,6 @@ app.get('/api/whoami', (req, res) => {
 var listener = app.listen(process.env.PORT || 3000, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+// git remote set-url origin https://github.com/ASIM-OSAMA/Request-Header-Parser-Microservice.git
+// git branch -M main
+// git push -u origin main
