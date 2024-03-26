@@ -31,13 +31,13 @@ app.get('/api/whoami', (req, res) => {
   const userAgent = req.headers["user-agent"]
 
   const obj = {
-    "ipaddress": ip,
-    "language": acceptsLanguages,
+    "ipaddress": {ip},
+    "language": {acceptsLanguages},
     "software": userAgent
   }
 
   res.status(200).send(obj)
-  // console.log(ip)
+  console.log(typeof(obj.ipaddress))
 })
 
 // listen for requests :)
